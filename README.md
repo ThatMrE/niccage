@@ -17,3 +17,17 @@ Once there is an HTML page, link them in its `<head>`:
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 ```
+
+## Lockstreak (`/tracker/`)
+
+A small installable web app that tracks sobriety ("days since") counters and
+daily habits, and renders the streak as a lock screen wallpaper sized for the
+Pixel 10 (1080 × 2424). Live at `/tracker/` once deployed.
+
+- No backend: everything is stored in the browser's localStorage, with JSON
+  export/import for backups.
+- `index.html` + `app.js` are the whole app; `sw.js` and `manifest.webmanifest`
+  make it installable and usable offline.
+- The PNG icons are rendered from `icon.svg` (192, 512, and a maskable 512).
+- The wallpaper is a still image, so the count refreshes when you open the app
+  and share or download it again.
